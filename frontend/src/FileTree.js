@@ -4,8 +4,9 @@ import { ChonkyActions, FileBrowser, FileNavbar, FileToolbar, FileList, FileCont
 import { setChonkyDefaults } from 'chonky';
 import axios from 'axios';
 
-//const apiEndpoint = process.env.REACT_APP_API_ENDPOINT || 'http://localhost:3000';
-const apiEndpoint = 'http://localhost:3000';
+const apiUrl = window.env.API_URL || 'http://localhost';
+const apiPort = window.env.API_PORT || '3000';
+const apiEndpoint = `${apiUrl}:${apiPort}`;
 
 setChonkyDefaults({ iconComponent: ChonkyIconFA });
 

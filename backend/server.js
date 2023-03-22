@@ -45,6 +45,10 @@ app.use(
 
 const s3Client = new S3Client({ region: process.env.AWS_REGION });
 
+app.get('/', async (req, res) => {
+        res.json();
+});
+
 app.get('/list/:prefix?', async (req, res) => {
     try {
         if (req.params.prefix) {
