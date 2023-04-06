@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ChonkyIconFA } from 'chonky-icon-fontawesome';
 import { ChonkyActions, FileBrowser, FileNavbar, FileToolbar, FileList, FileContextMenu } from 'chonky';
 import { setChonkyDefaults } from 'chonky';
-import axios from 'axios';
 
 const apiUrl = window.env.API_URL || 'http://localhost';
 const apiPort = window.env.API_PORT || '3000';
