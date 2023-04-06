@@ -1,15 +1,18 @@
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
 const winston = require('winston');
 const expressWinston = require('express-winston');
-const { S3Client, ListObjectsCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
+const dotenv = require('dotenv');
+dotenv.config({path: 'config.env', override: true, debug: true});
 
-dotenv.config();
+console.log(process.env.AWS_SECRET_ACCESS_KEY);
+console.log(process.env.AWS_ACCESS_KEY_ID);
+
+const { S3Client, ListObjectsCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
 
 const app = express();
 //app.options('*', cors()) // include before other routes
-//app.use(cors());
+app.use(cors());
 //app.use((req, res, next) => {
 //  res.header("Access-Control-Allow-Origin", "*")
 //}) 
