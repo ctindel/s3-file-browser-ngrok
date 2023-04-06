@@ -3,11 +3,10 @@ const cors = require('cors');
 const winston = require('winston');
 const expressWinston = require('express-winston');
 const dotenv = require('dotenv');
-dotenv.config({path: 'config.env', override: true, debug: true});
+dotenv.config({path: 'config.env', override: true});
 
-console.log(process.env.AWS_SECRET_ACCESS_KEY);
-console.log(process.env.AWS_ACCESS_KEY_ID);
-
+// Need to load the dotenv.config() before requiring the AWS SDK so that the 
+//  AWS_ACCESS environment variables can be overwritten if necessary
 const { S3Client, ListObjectsCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
 
 const app = express();

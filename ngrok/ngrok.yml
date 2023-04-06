@@ -2,10 +2,12 @@ version: "2"
 region: "us"
 tunnels:
   frontend:
-    proto: http
-    addr: frontend.prod.s3-file-browser-ngrok.local:9000
-    hostname: s3-file-browser-frontend.ngrok.io
+    #addr: localhost:9000
+    addr: frontend.prod.s3-file-browser-ngrok.local:3000
+    labels:
+      - edge=edghts_2Nbqaskmx20rAWm7YgipwuHndze
   backend:
-    proto: http
+    #addr: localhost:3000
     addr: backend.prod.s3-file-browser-ngrok.local:3000
-    hostname: s3-file-browser-backend.ngrok.io
+    labels:
+      - edge=edghts_2NbpfxCVrj0FSLhRmTTJWb9ISMH
