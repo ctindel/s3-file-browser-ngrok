@@ -108,3 +108,6 @@ dist
 # VIM temp file
 *~*
 *.swp
+
+# Mac file
+.DS_Store
