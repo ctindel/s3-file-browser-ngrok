@@ -1,5 +1,5 @@
 window.env = {
-  API_URL: 's3-file-browser-backend.ngrok.io',
-  API_PORT: '3000',
+  API_URL: 'YOUR_NGROK_FRONTEND_URL',
+  API_PORT: '443',
 };
 

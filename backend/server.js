@@ -8,7 +8,18 @@ const { S3Client, ListObjectsCommand, GetObjectCommand } = require('@aws-sdk/cli
 dotenv.config();
 
 const app = express();
-app.use(cors());
+//app.options('*', cors()) // include before other routes
+//app.use(cors());
+//app.use((req, res, next) => {
+//  res.header("Access-Control-Allow-Origin", "*")
+//}) 
+//app.use(function(req, res, next) {
+//  res.header('Access-Control-Allow-Origin', "*");
+//  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+//  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//  res.header("Access-Control-Allow-Credential", "true");
+//  next();
+//});
 app.disable('etag');
 
 const logger = winston.createLogger({
@@ -64,8 +75,6 @@ app.get('/list/:prefix?', async (req, res) => {
         const listObjectsCommand = new ListObjectsCommand({
             Bucket: process.env.S3_BUCKET_NAME,
             Prefix: decodeURIComponent(prefix),
-            //Prefix: prefix,
-            //Prefix: 'William_Tell_Overture_Trumpets/',
             Delimiter: '/',
         });
         const response = await s3Client.send(listObjectsCommand);
