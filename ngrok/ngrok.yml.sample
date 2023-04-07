@@ -5,9 +5,9 @@ tunnels:
     #addr: localhost:9000
     addr: frontend.prod.s3-file-browser-ngrok.local:3000
     labels:
-      - edge=edghts_2Nbqaskmx20rAWm7YgipwuHndze
+      - edge=YOUR_FRONTEND_EDGE_ID
   backend:
     #addr: localhost:3000
     addr: backend.prod.s3-file-browser-ngrok.local:3000
     labels:
-      - edge=edghts_2NbpfxCVrj0FSLhRmTTJWb9ISMH
+      - edge=YOUR_BACKEND_EDGE_ID
